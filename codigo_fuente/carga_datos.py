@@ -1,6 +1,6 @@
 import csv
 import os
-from nodo import NodoSensor
+from codigo_fuente.nodo import NodoSensor
 
 def cargar_datos_csv(ruta_csv, grafo, tabla_hash=None):
     
@@ -9,9 +9,8 @@ def cargar_datos_csv(ruta_csv, grafo, tabla_hash=None):
 
     sensores_cargados = 0
 
-    with open(ruta_csv, mode='r', encoding='utf-8') as archivo:
-        # Se utiliza DictReader estándar de Python
-        lector = csv.DictReader(archivo)
+    with open(ruta_csv, mode='r', encoding='utf-8-sig') as archivo:
+        lector = csv.DictReader(archivo, delimiter=';')
         
         for fila in lector:
             # Extracción y limpieza de cada campo según la regla RN-01
