@@ -9,7 +9,6 @@ class _NodoPila:
 
 
 class Pila:
-    """Estructura LIFO. Todas las operaciones son O(1)."""
 
     def __init__(self):
         self._tope = None
@@ -42,7 +41,6 @@ class Pila:
         return self._tamano
 
     def __iter__(self):
-        """Recorre de tope a base, sin modificar la pila."""
         actual = self._tope
         while actual is not None:
             yield actual.dato
