@@ -1,4 +1,4 @@
-from nodo import NodoLista
+from codigo_fuente.nodo import NodoLista
 
 class ListaEnlazada:
     """Lista simplemente enlazada dinámica implementada sin librerías externas."""
