@@ -1,6 +1,6 @@
-from nodo import NodoSensor
-from arista import Arista
-from lista_enlazada import ListaEnlazada
+from codigo_fuente.nodo import NodoSensor
+from codigo_fuente.arista import Arista
+from codigo_fuente.lista_enlazada import ListaEnlazada
 
 class Grafo:
     def __init__(self):
