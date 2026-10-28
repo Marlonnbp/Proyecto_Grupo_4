@@ -1,4 +1,3 @@
-#favian
 
 REPOSO = "Reposo"
 VIGILANCIA = "Vigilancia"
@@ -26,7 +25,6 @@ def umbral_de_suelo(tipo_suelo):
 
 
 class AutomataSensor:
-    """Un autómata por sensor. Implementa la tabla de transiciones de 2.3."""
 
     def __init__(self, id_sensor, tipo_suelo):
         self.id_sensor = id_sensor
@@ -35,6 +33,7 @@ class AutomataSensor:
         self.estado = REPOSO
 
     def procesar(self, entrada, magnitud=None):
+        
         if entrada == ENTRADA_T:
             self.estado = REPOSO
         elif entrada == ENTRADA_R:
@@ -53,3 +52,5 @@ class AutomataSensor:
 
     def __repr__(self):
         return f"AutomataSensor({self.id_sensor}, suelo={self.tipo_suelo}, estado={self.estado})"
+
+    
