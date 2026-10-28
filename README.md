@@ -20,6 +20,5 @@ Simulador en Python de la red de sensores sísmicos del Perú.
 - `datos/`: archivos CSV y modelo guardado.
 
 ## Reglas de trabajo
-- Una rama por integrante.
-- Nadie sube cambios directo a `main`.
-- Los cambios entran por pull request, revisado por otro integrante.
+- Hacer Fetch/Pull antes de agregar algun commit.
+- Implementar commits pequeños.
