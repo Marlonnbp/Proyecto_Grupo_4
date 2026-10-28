@@ -1,7 +1,7 @@
 #favian
 
-from pila import Pila
-from automata_sensor import (
+from codigo_fuente.pila import Pila
+from codigo_fuente.automata_sensor import (
     AutomataSensor, ALERTA, ENTRADA_D, ENTRADA_R, ENTRADA_T,
 )
 
