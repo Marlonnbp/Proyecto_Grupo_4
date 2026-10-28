@@ -2,11 +2,11 @@
 
 import unittest
 
-from pila import Pila
-from automata_sensor import (
+from codigo_fuente.pila import Pila
+from codigo_fuente.automata_sensor import (
     AutomataSensor, REPOSO, VIGILANCIA, ALERTA, umbral_de_suelo,
 )
-from simulacion_alerta import SimuladorAlerta, reconstruir_ruta
+from codigo_fuente.simulacion_alerta import SimuladorAlerta, reconstruir_ruta
 
 
 class TestPila(unittest.TestCase):
