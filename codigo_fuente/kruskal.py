@@ -4,9 +4,7 @@ from codigo_fuente.union_find import UnionFind
 
 
 def kruskal(grafo):
-    #Devuelve (arbol, costo_total): el árbol es una ListaEnlazada de Aristas.
-    #Si el grafo no es conexo, el árbol tendrá menos de V-1 aristas.
-    
+
     cola = ColaPrioridad()
     for arista in grafo.aristas:
         cola.insertar(arista)
