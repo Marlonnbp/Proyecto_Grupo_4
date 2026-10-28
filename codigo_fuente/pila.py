@@ -1,4 +1,3 @@
-#favian
 
 class _NodoPila:
     __slots__ = ("dato", "siguiente")
