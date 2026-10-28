@@ -1,12 +1,3 @@
-"""Costo de los enlaces entre sensores (F2).
-
-Contiene la distancia de Haversine, la fórmula lineal ponderada (línea base y
-plan de contingencia del MLP) y el cálculo de costo para los enlaces candidatos
-(27 sensores -> 27 x 26 / 2 = 351 pares no dirigidos).
-
-Reglas del negocio (RN-03): el costo es estrictamente positivo (con un valor
-mínimo) y simétrico: costo(A, B) == costo(B, A).
-"""
 import math
 
 from codigo_fuente.lista_enlazada import ListaEnlazada

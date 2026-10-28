@@ -2,8 +2,6 @@ import csv
 import math
 import random
 
-"""Generador de datos sintéticos de enlaces para entrenar el MLP de costos.
-"""
 
 SEMILLA = 42
 NUM_EJEMPLOS = 5000

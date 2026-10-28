@@ -1,14 +1,3 @@
-"""Modelo MLP para estimar el costo de los enlaces entre sensores (F2, complemento).
-
-- Algoritmo: MLPRegressor de scikit-learn.
-- Entradas: distancia de Haversine (km), diferencia de altitud (m) e
-  interferencia promedio.
-- Entradas y salida escaladas con StandardScaler.
-- Semilla fija (RN-12) en la partición de datos y en la red.
-- Persistencia con pickle.
-- La fórmula lineal de costos.py es la línea base de comparación y el respaldo
-  si el modelo falla.
-"""
 import os
 import pickle
 

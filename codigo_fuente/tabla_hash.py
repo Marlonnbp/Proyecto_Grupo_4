@@ -9,12 +9,7 @@ class _Entrada:
 
 
 class TablaHash:
-    """Tabla hash con encadenamiento (chaining) implementada desde cero.
 
-    - El arreglo principal contiene una ListaEnlazada propia por posición.
-    - La clave es el ID_Sensor (por ejemplo "S01" o "S27").
-    - Si el factor de carga supera FACTOR_CARGA_MAX, la tabla se redimensiona.
-    """
     CAPACIDAD_INICIAL = 53        # número primo: reparte mejor los índices
     FACTOR_CARGA_MAX = 0.75
     _BASE = 31                    # base del hash polinómico
@@ -37,11 +32,7 @@ class TablaHash:
         return cubetas
 
     def _hash(self, clave):
-        """Función de dispersión polinómica: convierte el ID en un índice.
 
-        h = (h * 31 + código_del_carácter) mod capacidad
-        Ejemplo: "S01" y "S27" producen índices distintos dentro de [0, capacidad).
-        """
         clave = str(clave)
         valor = 0
         for caracter in clave:
