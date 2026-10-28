@@ -5,16 +5,17 @@ from codigo_fuente.automata_sensor import (
 
 
 def reconstruir_ruta(predecesores, origen, destino):
+    obtener = predecesores.buscar if hasattr(predecesores, "buscar") else predecesores.get
     pila = Pila()
     actual = destino
     while actual is not None:
         pila.apilar(actual)
         if actual == origen:
             break
-        actual = predecesores.get(actual)
+        actual = obtener(actual)
 
     if pila.ver_tope() != origen:
-        return None  # el destino no es alcanzable desde el origen
+        return None  
 
     ruta = []
     while not pila.esta_vacia():
@@ -78,13 +79,12 @@ class SimuladorAlerta:
         if magnitud < 0:
             raise ValueError("La magnitud no puede ser negativa")
 
-        self.reiniciar()  # cada evento parte de una red en Reposo
+        self.reiniciar()  
 
         origen = self._automatas[id_sensor]
         origen.procesar(ENTRADA_D, magnitud)
         reporte = ReporteAlerta(id_sensor, magnitud, origen.umbral, origen.estado)
 
-        # RN-09: si no alcanza el umbral, queda en Vigilancia y no se propaga.
         if not origen.esta_en_alerta():
             reporte.mensaje = "La magnitud no alcanza el umbral: no se propaga alerta."
             return reporte
@@ -102,7 +102,6 @@ class SimuladorAlerta:
         reporte.saltos = len(ruta) - 1
         reporte.alertados = [id_sensor]
 
-        # RN-10: cada sensor de la ruta se alerta una sola vez, en orden.
         for id_siguiente in ruta[1:]:
             siguiente = self._automatas[id_siguiente]
             if siguiente.estado != ALERTA:
