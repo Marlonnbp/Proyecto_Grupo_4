@@ -1,8 +1,10 @@
 class Arista:
     def __init__(self, origen, destino, costo):
-        self.origen = str(origen)       # ID del sensor origen (ej: "S01")
-        self.destino = str(destino)     # ID del sensor destino (ej: "S02")
-        self.costo = float(costo)       # Costo positivo calculado por fórmula o MLP
+        self.origen = str(origen)
+        self.destino = str(destino)
+        self.costo = float(costo)
+        if self.costo <= 0:
+            raise ValueError(f"El costo debe ser positivo: {self.origen}-{self.destino} = {self.costo}")
 
     def __lt__(self, otra):
         if self.costo == otra.costo:
