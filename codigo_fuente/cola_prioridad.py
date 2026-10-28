@@ -1,5 +1,5 @@
 class ColaPrioridad:
-    """Heap binario mínimo. Los elementos deben ser comparables con <."""
+    #Heap binario mínimo. Los elementos deben ser comparables con <
 
     def __init__(self):
         self._datos = []
