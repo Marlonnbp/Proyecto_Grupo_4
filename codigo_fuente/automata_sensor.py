@@ -1,11 +1,5 @@
 #favian
 
-"""Autómata de estados finitos de cada sensor (sección 2.3 del entregable).
-
-Estados : Reposo, Vigilancia, Alerta
-Entradas: d (evento sísmico con magnitud m), r (alerta recibida), t (reinicio)
-"""
-
 REPOSO = "Reposo"
 VIGILANCIA = "Vigilancia"
 ALERTA = "Alerta"
@@ -41,13 +35,6 @@ class AutomataSensor:
         self.estado = REPOSO
 
     def procesar(self, entrada, magnitud=None):
-        """Aplica una entrada y devuelve el nuevo estado.
-
-        - t: siempre vuelve a Reposo.
-        - r: siempre pasa a Alerta (si ya estaba en Alerta se ignora).
-        - d: requiere magnitud. Si estaba en Alerta, se ignora; si no,
-             m >= umbral -> Alerta, m < umbral -> Vigilancia.
-        """
         if entrada == ENTRADA_T:
             self.estado = REPOSO
         elif entrada == ENTRADA_R:
